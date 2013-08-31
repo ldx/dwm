@@ -64,8 +64,8 @@ static const char *termcmd[]  = { "xterm", NULL };
 static const char *amixertoggle[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
 static const char *amixercmddec[] = { "amixer", "-q", "set", "Master", "5%-", NULL };
 static const char *amixercmdinc[] = { "amixer", "-q", "set", "Master", "5%+", NULL };
-//static const char *suspendcmd[]  = { "sudo", "pm-suspend", NULL };
 static const char *screensavercmd[] = { "xscreensaver-command", "-lock", NULL };
+static const char *suspendcmd[]  = { "sudo", "pm-suspend", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -106,7 +106,7 @@ static Key keys[] = {
   { 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = amixercmddec} },
   { 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = amixercmdinc} },
   { MODKEY|ShiftMask,             XK_o,                      spawn,          {.v = screensavercmd} },
-//{ 0,                            XF86XK_Standby,            spawn,          {.v = suspendcmd} },
+  { 0,                            XF86XK_Standby,            spawn,          {.v = suspendcmd} },
 };
 
 /* button definitions */
