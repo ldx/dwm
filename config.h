@@ -106,7 +106,7 @@ static Key keys[] = {
   { 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = amixercmddec} },
   { 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = amixercmdinc} },
   { MODKEY|ShiftMask,             XK_o,                      spawn,          {.v = screensavercmd} },
-  { 0,                            XF86XK_Standby,            spawn,          {.v = suspendcmd} },
+  { MODKEY|ShiftMask,             XK_s,                      spawn,          {.v = suspendcmd} },
 };
 
 /* button definitions */
