@@ -60,9 +60,11 @@ static const Layout layouts[] = {
 /* commands */
 static const char  *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
 static const char *termcmd[]  = { "xterm", NULL };
-static const char *amixertoggle[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *amixercmddec[] = { "amixer", "-q", "set", "Master", "5%-", NULL };
-static const char *amixercmdinc[] = { "amixer", "-q", "set", "Master", "5%+", NULL };
+static const char *mutetoggle[] = { "/home/vili/.local/bin/pa-control", "mute", NULL };
+static const char *volinc[] = { "/home/vili/.local/bin/pa-control", "up", NULL };
+static const char *voldec[] = { "/home/vili/.local/bin/pa-control", "down", NULL };
+static const char *brinc[] = { "sudo", "/home/vili/.local/bin/brightness-control", "up", NULL };
+static const char *brdec[] = { "sudo", "/home/vili/.local/bin/brightness-control", "down", NULL };
 static const char *screensavercmd[] = { "xscreensaver-command", "-lock", NULL };
 static const char *suspendcmd[]  = { "sudo", "pm-suspend", NULL };
 
@@ -101,9 +103,11 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
   { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-  { 0,                            XF86XK_AudioMute,          spawn,          {.v = amixertoggle} },
-  { 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = amixercmddec} },
-  { 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = amixercmdinc} },
+  { 0,                            XF86XK_AudioMute,          spawn,          {.v = mutetoggle} },
+  { 0,                            XF86XK_AudioLowerVolume,   spawn,          {.v = voldec} },
+  { 0,                            XF86XK_AudioRaiseVolume,   spawn,          {.v = volinc} },
+  { 0,                            XF86XK_MonBrightnessUp,    spawn,          {.v = brinc} },
+  { 0,                            XF86XK_MonBrightnessDown,  spawn,          {.v = brdec} },
   { MODKEY|ShiftMask,             XK_o,                      spawn,          {.v = screensavercmd} },
   { MODKEY|ShiftMask,             XK_s,                      spawn,          {.v = suspendcmd} },
 };
