@@ -59,7 +59,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char  *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", colors[0][ColBG], "-nf", colors[0][ColFG], "-sb", colors[1][ColBG], "-sf", colors[1][ColFG], NULL };
-static const char *termcmd[]  = { "xterm", NULL };
+static const char *termcmd[]  = { "xterm", "zsh" };
 static const char *mutetoggle[] = { "/home/vili/.local/bin/pa-control", "mute", NULL };
 static const char *volinc[] = { "/home/vili/.local/bin/pa-control", "up", NULL };
 static const char *voldec[] = { "/home/vili/.local/bin/pa-control", "down", NULL };
